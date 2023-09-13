@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 
-"""Module defines a function"""
+""" Defines a function that Reads a text file. """
 
 
 def read_file(filename=""):
-    """reads a text file"""
+    """ Reads a text file. """
 
     if not filename:
         return

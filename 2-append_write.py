@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 
-"""Module defines a function"""
+""" Defines a function that appends to a text file. """
 
 
 def append_write(filename="", text=""):
-    """append a string to a text file"""
+    """ Append a string to a text file. """
 
     with open(filename, mode="a", encoding="utf-8") as f:
         return f.write(text)

@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
-"""Module defines a function"""
+""" Defines a function  that adds all arguments to a Python list,
+and then save them to a file. """
 
 import sys
 
