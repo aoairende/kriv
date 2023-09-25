@@ -21,7 +21,7 @@ void swap_var(int *a, int *b)
  * @size: size of array (size_t)
  * Return: index of pivote (int)
  */
-int partition(int *array, int low, int high, size_t size)
+int partition_array(int *array, int low, int high, size_t size)
 {
 	int pivot = array[high];
 	int x = low - 1, y;

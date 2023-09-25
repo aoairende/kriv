@@ -22,7 +22,7 @@ void insertion_sort_list(listint_t **list)
 
 		while (prev && prev->n > value)
 		{
-			swap(prev, head, list);
+			swap_element(prev, head, list);
 			print_list(*list);
 			prev = head->prev;
 		}
@@ -36,7 +36,7 @@ void insertion_sort_list(listint_t **list)
  * @a: node
  * @b: node
  */
-void swap(listint_t *a, listint_t *b, listint_t **head)
+void swap_element(listint_t *a, listint_t *b, listint_t **head)
 {
 	listint_t *aux1 = NULL, *aux2 = NULL;
 
