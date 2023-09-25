@@ -1,36 +1,58 @@
 #include "sort.h"
 
 /**
- * insertion_sort_list - sorts a doubly linked list of integers in ascending
- * order using the Insertion sort algorithm
- * @list: Double pointer to the head of the linked list
+ * insertion_sort_list  - insertion_sort_list
+ * @list: doubly liked list
  *
- * Return: void
  */
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *swap_node, *next_swap;
+	listint_t *head, *prev;
+	int value;
 
-	if (list == NULL || *list == NULL)
-		return;
-	swap_node = (*list)->next;
-	while (swap_node != NULL)
+	if (list == NULL || (*list)->next == NULL || (*list) == NULL)
 	{
-		next_swap = swap_node->next;
-		while (swap_node->prev != NULL && swap_node->prev->n > swap_node->n)
-		{
-			swap_node->prev->next = swap_node->next;
-			if (swap_node->next != NULL)
-				swap_node->next->prev = swap_node->prev;
-			swap_node->next = swap_node->prev;
-			swap_node->prev = swap_node->next->prev;
-			swap_node->next->prev = swap_node;
-			if (swap_node->prev == NULL)
-				*list = swap_node;
-			else
-				swap_node->prev->next = swap_node;
-			print_list(*list);
-		}
-		swap_node = next_swap;
+		return;
 	}
+	head = *list;
+	while (head)
+	{
+		prev = head->prev;
+		value = head->n;
+
+		while (prev && prev->n > value)
+		{
+			swap(prev, head, list);
+			print_list(*list);
+			prev = head->prev;
+		}
+		head = head->next;
+	}
+}
+
+/**
+ * swap - swap 2 element in an list
+ * @head: head of list
+ * @a: node
+ * @b: node
+ */
+void swap(listint_t *a, listint_t *b, listint_t **head)
+{
+	listint_t *aux1 = NULL, *aux2 = NULL;
+
+	if (a == NULL || b == NULL)
+		return;
+	aux1 = a->prev;
+	aux2 = b->next;
+	/* if nodes are adjacent*/
+	if (aux1)
+		aux1->next = b;
+	if (aux2)
+		aux2->prev = a;
+	a->next = aux2;
+	a->prev = b;
+	b->next = a;
+	b->prev = aux1;
+	if (aux1 == NULL)
+		*head = b;
 }
