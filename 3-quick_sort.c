@@ -17,7 +17,7 @@ void swap_var(int *a, int *b)
 }
 
 /**
- * partition - Partition an array and using pivot
+ * partition_array - Partition an array and using pivot
  *
  * @array: Array
  * @low: int
@@ -49,7 +49,7 @@ int partition_array(int *array, int low, int high, size_t size)
 
 /**
  * _qsort - Sorting Recursively an Array
- * 
+ *
  * @array: Array to be sorted
  * @low: The lowest value of the array
  * @high: highest value of the array
@@ -62,7 +62,7 @@ void _qsort(int *array, int low, int high, size_t size)
 
 	if (low < high)
 	{
-		i = partition(array, low, high, size);
+		i = partition_array(array, low, high, size);
 		_qsort(array, low, i - 1, size);
 		_qsort(array, i + 1, high, size);
 	}

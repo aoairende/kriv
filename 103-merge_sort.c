@@ -15,7 +15,8 @@
  * Return: void
  */
 
-void sort_merge(size_t start, size_t middle, size_t end, int *dest, int *source)
+void sort_merge(size_t start, size_t middle, size_t end, int *dest,
+int *source)
 {
 	size_t i, j, k;
 
@@ -71,7 +72,7 @@ void sort_split_merge(size_t start, size_t end, int *array, int *copy)
 /**
  * merge_sort - sorts an array of integers in ascending order using the
  * merge sort algorithm.
- * 
+ *
  * @array: array to sort
  * @size: size of the array
  *

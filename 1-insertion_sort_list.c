@@ -31,7 +31,7 @@ void insertion_sort_list(listint_t **list)
 }
 
 /**
- * swap - swap 2 element in an list
+ * swap_element - swap 2 element in an list
  * @head: head of list
  * @a: node
  * @b: node

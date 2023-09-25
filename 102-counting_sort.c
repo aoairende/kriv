@@ -27,7 +27,6 @@ void counting_sort(int *array, size_t size)
 		if (array[j] > max)
 			max = array[j];
 	}
-	/* Create an array to store count of each element */
 	count = malloc(sizeof(int) * (max + 1));
 	if (count == NULL)
 	{
@@ -49,9 +48,7 @@ void counting_sort(int *array, size_t size)
 		array[count[copy[j]]] = copy[j];
 		count[copy[j]] += 1;
 	}
-	/* Print the sorted array */
-	print_array(count, max + 1);
-	/* Free allocated memory */
-	free(count);
+	print_array(count, max + 1);/* Print the sorted array */
+	free(count);/* Free allocated memory */
 	free(copy);
 }
