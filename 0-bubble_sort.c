@@ -2,10 +2,12 @@
 #include "sort.h"
 
 /**
- *bubble_sort - sorts ints from low to high
+ *bubble_sort - sorts integers from low to high.
+ *
  *@array: the array to be sort
  *@size: the size of the array
  */
+
 void bubble_sort(int *array, size_t size)
 {
 	size_t j, i;
@@ -22,6 +24,7 @@ void bubble_sort(int *array, size_t size)
 				n = array[j];
 				array[j] = array[j + 1];
 				array[j + 1] = n;
+				/* Print the current state of the array after swapping */
 				print_array(array, size);
 			}
 		}

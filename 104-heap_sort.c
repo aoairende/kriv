@@ -1,7 +1,8 @@
 #include "sort.h"
 
 /**
- * sift_down - fixes a heap
+ * fix_heap - fixes a heap
+ *
  * @array: the heap to fix
  * @root: the root of the heap
  * @end: the last index of the heap
@@ -9,7 +10,8 @@
  *
  * Return: void
  */
-void sift_down(int *array, size_t root, size_t end, size_t size)
+
+void fix_heap(int *array, size_t root, size_t end, size_t size)
 {
 	size_t left_child, right_child, swap;
 	int temp;
@@ -34,18 +36,20 @@ void sift_down(int *array, size_t root, size_t end, size_t size)
 
 /**
  * make_heap - makes a heap from an unsorted array
+ *
  * @array: array to turn into a heap
  * @size: size of the array
  *
  * Return: void
  */
+
 void make_heap(int *array, size_t size)
 {
 	size_t parent;
 
 	for (parent = ((size - 1) - 1) / 2; 1; parent--)
 	{
-		sift_down(array, parent, size - 1, size);
+		fix_heap(array, parent, size - 1, size);
 		if (parent == 0)
 			break;
 	}
@@ -53,11 +57,13 @@ void make_heap(int *array, size_t size)
 
 /**
  * heap_sort - sorts an array of ints in ascending order w/ the Heap sort algo
+ *
  * @array: array to sort
  * @size: size of the array
  *
  * Return: void
  */
+
 void heap_sort(int *array, size_t size)
 {
 	size_t end;
@@ -65,15 +71,19 @@ void heap_sort(int *array, size_t size)
 
 	if (array == NULL || size < 2)
 		return;
+	/* Create a max heap from the input array. */
 	make_heap(array, size);
+	/* Initialize the 'end' variable to the last index of the array. */
 	end = size - 1;
 	while (end > 0)
 	{
+		/* Swap the root with the last element in heap.*/
 		temp = array[end];
 		array[end] = array[0];
 		array[0] = temp;
+		/* Print the array after each swap for visualization. */
 		print_array(array, size);
 		end--;
-		sift_down(array, 0, end, size);
+		fix_heap(array, 0, end, size);
 	}
 }

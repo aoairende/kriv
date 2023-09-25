@@ -4,12 +4,14 @@
 /**
  * bitonic_compare - sort the values in a sub-array with respect to
  * the Bitonic sort algorithm
+ *
  * @up: direction of sorting
  * @array: sub-array to sort
  * @size: size of the sub-array
  *
  * Return: void
  */
+
 void bitonic_compare(char up, int *array, size_t size)
 {
 	size_t i, dist;
@@ -29,12 +31,14 @@ void bitonic_compare(char up, int *array, size_t size)
 
 /**
  * bitonic_merge - recursive function that merges two sub-arrays
+ *
  * @up: direction of sorting
  * @array: sub-array to sort
  * @size: size of the sub-array
  *
  * Return: void
  */
+
 void bitonic_merge(char up, int *array, size_t size)
 {
 	if (size < 2)
@@ -46,6 +50,7 @@ void bitonic_merge(char up, int *array, size_t size)
 
 /**
  * bit_sort - recursive function using the Bitonic sort algorithm
+ *
  * @up: direction of sorting
  * @array: sub-array to sort
  * @size: size of the sub-array
@@ -53,6 +58,7 @@ void bitonic_merge(char up, int *array, size_t size)
  *
  * Return: void
  */
+
 void bit_sort(char up, int *array, size_t size, size_t t)
 {
 	if (size < 2)
@@ -70,11 +76,13 @@ void bit_sort(char up, int *array, size_t size, size_t t)
 /**
  * bitonic_sort - sorts an array of integers in ascending order using
  * the Bitonic sort algorithm
+ *
  * @array: array to sort
  * @size: size of the array
  *
  * Return: void
  */
+
 void bitonic_sort(int *array, size_t size)
 {
 	if (array == NULL || size < 2)

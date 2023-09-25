@@ -2,8 +2,8 @@
 #include "stdlib.h"
 
 /**
- * counting_sort - sorts an array of integers in ascending order using the
- * Counting sort algorithm
+ * counting_sort - sorts an array of integers in ascending order
+ *
  * @array: array to sort
  * @size: size of the array to sort
  *
@@ -15,7 +15,7 @@ void counting_sort(int *array, size_t size)
 	int *count = NULL, *copy = NULL;
 	size_t j, temp, total = 0;
 
-
+	/* Check if the array is NULL or size is less than 2 */
 	if (array == NULL || size < 2)
 		return;
 	copy = malloc(sizeof(int) * size);
@@ -27,6 +27,7 @@ void counting_sort(int *array, size_t size)
 		if (array[j] > max)
 			max = array[j];
 	}
+	/* Create an array to store count of each element */
 	count = malloc(sizeof(int) * (max + 1));
 	if (count == NULL)
 	{
@@ -48,7 +49,9 @@ void counting_sort(int *array, size_t size)
 		array[count[copy[j]]] = copy[j];
 		count[copy[j]] += 1;
 	}
+	/* Print the sorted array */
 	print_array(count, max + 1);
+	/* Free allocated memory */
 	free(count);
 	free(copy);
 }

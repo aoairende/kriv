@@ -2,9 +2,11 @@
 
 /**
  * locate_min - Locatin the min From Current index in the array
+ *
  * @array: The Array to be Searched
  * @index: Starting Index of The Search
  * @size: The Size of The Array
+ *
  * Return: (int) index of min if found or
  * same given index if index is the min
  */
@@ -29,7 +31,8 @@ int locate_min(int *array, int index, size_t size)
 }
 
 /**
- * selection_sort - Implementation of selection Sort Algrithme
+ * selection_sort - Implementation of selection Sort Algorithm
+ *
  * @array: Array to sort type int *
  * @size: The Size of The Given Array
  *
